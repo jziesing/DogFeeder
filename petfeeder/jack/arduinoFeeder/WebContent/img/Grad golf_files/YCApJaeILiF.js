@@ -1,0 +1,5 @@
+/*!CK:4034611971!*//*1401754628,178198825*/
+
+if (self.CavalryLogger) { CavalryLogger.start_js(["uKw0L"]); }
+
+__d("PhotosetSearchPivotData",["AsyncRequest","Deferred","PhotoStreamCache","XPhotosetSearchPivotControllerURIBuilder"],function(a,b,c,d,e,f,g,h,i,j){var k=/^(perm:)?tag:(\d+)/,l={},m={fetch:function(n,o){if(!(n in l)){var p=l[n]=new h(),q=(new j()).setInt('fbid',n);if(o){var r={};o.fbidList.forEach(function(t){var u=o.getCacheContent(t,i.EXTRA);Object.keys(u.tagRects).forEach(function(v){if(k.test(v)){var w=RegExp.$2;if(w in r){r[w]++;}else r[w]=1;}});});q.setIntToIntMap('tags',r);}(new g()).setURI(q.getURI()).setHandler(function(t){p.succeed(t.getPayload());}).setErrorHandler(function(t){return p.fail(t);}).setAllowCrossPageTransition(true).send();}var s=new h();l[n].addCallback(function(t){return s.succeed(t);});l[n].addErrback(function(t){delete l[n];s.fail(t);});return s;}};e.exports=m;},null);

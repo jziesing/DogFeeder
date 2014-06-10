@@ -1,0 +1,6 @@
+/*!CK:1246031929!*//*1401158697,178142541*/
+
+if (self.CavalryLogger) { CavalryLogger.start_js(["wzCOb"]); }
+
+__d("EventsInviteLink",["AsyncDialog","AsyncRequest","copyProperties","DOM","Form","tx","Event"],function(a,b,c,d,e,f,g,h,i,j,k,l,m){function n(o,p,q,r){this._link=o;this._hiddenInput=p;this._invitees=q;this._isInInviteFlowSingleCol=r;m.listen(this._link,'click',this.showDialog.bind(this));}i(n.prototype,{getInvitees:function(){return this._invitees;},showDialog:function(){var o=(this._isInInviteFlowSingleCol)?'event_invite_single_col':'plan',p=new h('/ajax/choose/').setMethod('POST').setData({type:o,invitees:this._invitees}).setRelativeTo(this._link);g.send(p,this.subscribeToDialog.bind(this));},subscribeToDialog:function(o){o.subscribe('confirm',function(){this.update(o.getRoot());o.hide();}.bind(this));},update:function(o){this._invitees=[];var p=k.serialize(o),q=JSON.parse(p.profileChooserItems),r;for(r in q)if(q.hasOwnProperty(r)&&q[r])this._invitees.push(r);this._hiddenInput.value=this._invitees.join(',');var s;if(this._invitees.length===0){s="Invite Friends";}else if(this._invitees.length===1){s="1 friend invited";}else if(this._invitees.length>1)s=l._("{num} friends invited",{num:this._invitees.length});if(s)j.setContent(this._link,s);}});e.exports=n;},null);
+__d("legacy:focus",["Focus"],function(a,b,c,d){a.Focus=b('Focus');},3);
