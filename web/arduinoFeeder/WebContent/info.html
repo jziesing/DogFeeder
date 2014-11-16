@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="US-ASCII">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arduino Feeder</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/bone.png" />
+
+    <script src="js/lib/jquery-1.11.0.min.js"></script>
+    <script src="js/lib/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="js/lib/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link href="css/index.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+          <ul class="nav nav-pills pull-right">
+            <li class="#"><a href="index.html">Home</a></li>
+             <li class="active"><a href="#">Info</a></li>
+           </ul>
+            <h3 class="text-muted">Feeder</h3>   
+      </div>
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li  data-slide-to="0" class="active"></li>
+          <li  data-slide-to="1"></li>
+          <li  data-slide-to="2"></li>
+          <li  data-slide-to="3"></li>
+          <li  data-slide-to="4"></li>
+          <li  data-slide-to="5"></li>
+          <li  data-slide-to="6"></li>
+          <li  data-slide-to="7"></li>
+          <li  data-slide-to="8"></li>
+          <li  data-slide-to="9"></li>
+          <li  data-slide-to="10"></li>
+          <li  data-slide-to="11"></li>
+          <li  data-slide-to="12"></li>
+          <li  data-slide-to="13"></li>
+          <li  data-slide-to="14"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="img/team.jpg" alt="First slide">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Team Something Clever</h1>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="img/feeder.jpg" alt="Second slide">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Feeder</h1>
+                <p>We built a dog feeder with communication through the internet.</p>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="img/3d.jpg" alt="Third slide">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Design influences</h1>
+                <h3>
+                  <ul>
+                    <li>Arduino Yun</li>
+                    <li>3D printer files</li>
+                    <li>Tomcat Server</li>
+                    <li>UVC camera</li>
+                  </ul>
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="img/init.jpg" alt="Fourth slide">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Initial hardware build</h1>
+                <h4>We started with the auger based implementationon using the 3d printer to print the auger and its holder. We attatched it inside a T shaped PBC pipe to add structure and direction for the food to flow</h4>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="img/yun.jpg" alt="Sixth slide">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Initial Software</h1>
+                <h4>The first software we worte was pretty basic.  Having no experience with an Arduino Yun, but some experience with an Aduino was interesting and required a few days to adapt.  We first dug into the Arduino's libraries and used a server package that handled all the requests directly with the user.  This was quickly proven to be inaffective when trying to get and post mid to larger sized pieces of data.  This issue led us to discover the full use of the Yun's linux processor, which has an OpenWrt image on it.  The First software we ended up writing for a basic feed command used a basic javascript page that posted, a tomcat servlet, and an Arduino 'sketch' that executed get's on the server and moved the servo accordingly. </h4>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="img/problems.jpg" alt="Seventh slide">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Hardware Problems</h1>
+                <h4>Jamming:</h4>
+                <h4>Caused lots of problems.  Initially we tested with cerial (raisin brand) and it worked well, but when we moved to dog food and used a large container filled up with got jamming.  We tried a few different things both design oriented and programming oriented, but in the end we found making the auger narrower and changing the area where food enters the auger was most effec </h4>
+                <h4>Camera Joystick:</h4>
+                <h4>This was tricky to make and could be made a lot better.  Using wood for this is not ideal.  I think in the future I would design some 3d files to print to make the design nicer and more effective.  It does work however and proves the concept. </h4>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="img/audio.jpg" alt="Eighth slide">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Audio Issue</h1>
+                <h4>When we set out to add audio communication to the feeder we quickly learned that a video chat like feature would be very difficult and possibly not possible.  We then tried to add sending recorded messages to the feeder, and got fairly far, but failed in the end.  The issue was sending the video file.  We only tried on a tomcat server, which may be prohibiting us.  Nevertheless I feel this feature is worth revisiting.  We did think about adding some pre loaded sounds to play for your dog but found it sill when testing. </h4>
+              </div>
+            </div>
+          </div>
+          
+          <div class="item">
+            <img src="img/wifi.jpg" alt="Nineth slide">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Wifi</h1>
+                <h4>Initially we set out to make a wifi dog feeder, since that would be more convieniet for everyone.  It turned out that we ran into trouble using wifi when implementing the webcam stream.  In order to do so we needed reconfigure our wifi to get our own ip.  This is doable, but but for convience we decided to go with an ethernet connection, especially since things are already pretty complicated using the schools wifi.</h4>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="img/steel.jpg" alt="Tenth slide">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1 >Final Software</h1>
+                <h4 >The final ui and front end was done using bootstrap and backbone.  We settled on 4 main features: feed, schedule feed, live stream, and moving the camera.  We also had a tomcat server running.  This communicated with the arduino, which ended up having a bit of code on it. The Arduino turned out to be sketch code (.ino) and terminal commands, and we tried to do as much work on our server to keep better performance from the Arduino.  </h4>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="img/stream.jpg" alt="Eleventh slide">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1 style="color: black">Video Streaming</h1>
+                <h4 style="color: black">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspFairly easier than expected, but requires lots of gets and an idependent ip.  The openwrt system has a streaming package that is great for streaming a uvc webcam, but unfortunetly not able to stream audio.  We also tried to send a recorded audio clip to the arduino but ran into trouble sending the mp3 file from the server to the arduino.  This may be possible but will require a lot more time to understand the Yun</h4>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="img/camera.jpg" alt="Twelfth slide">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Video Controls</h1>
+                <h4>This feature was added later when wer realized sending audio would not be possible.  We knew the code for this implementation would not be hard, so we got busy with the hardware design.  The design started with cardboard, then moved to wood.  Although it was tricky with wood, we created a decent prototype.  After attaching the camera mod we began to write code and things went pretty well.  We had to account for the servo's jerky movement which was fun.  This could be much better if we created the hardware with the 3d printer and wrote code to allow multiple direction movement at the same time via the keyboard. </h4>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="img/feeding.jpg" alt="Thirteenth slide">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Feed</h1>
+                <h4>This feature was added later when wer realized sending audio would not be possible.  We knew the code for this implementation would not be hard, so we got busy with the hardware design.  The design started with cardboard, then moved to wood.  Although it was tricky with wood, we created a decent prototype.  After attaching the camera mod we began to write code and things went pretty well.  We had to account for the servo's jerky movement which was fun.  This could be much better if we created the hardware with the 3d printer and wrote code to allow multiple direction movement at the same time via the keyboard. </h4>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="img/schedrr.jpg" alt="Fourteenth slide">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1 style="color: black">Schedule</h1>
+                <h4 style="color: black">This feature was added later when wer realized sending audio would not be possible.  We knew the code for this implementation would not be hard, so we got busy with the hardware design.  The design started with cardboard, then moved to wood.  Although it was tricky with wood, we created a decent prototype.  After attaching the camera mod we began to write code and things went pretty well.  We had to account for the servo's jerky movement which was fun.  This could be much better if we created the hardware with the 3d printer and wrote code to allow multiple direction movement at the same time via the keyboard. </h4>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="img/dogs.jpg" alt="Fifteenth slide">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Final Product</h1>
+                <h4>This feature was added later when wer realized sending audio would not be possible.  We knew the code for this implementation would not be hard, so we got busy with the hardware design.  The design started with cardboard, then moved to wood.  Although it was tricky with wood, we created a decent prototype.  After attaching the camera mod we began to write code and things went pretty well.  We had to account for the servo's jerky movement which was fun.  This could be much better if we created the hardware with the 3d printer and wrote code to allow multiple direction movement at the same time via the keyboard. </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+
+      </div>
+
+      <div class="footer">
+        <p>&copy; Feeder 2014</p>
+      </div>
+
+    </div>
+  </body>
+</html>

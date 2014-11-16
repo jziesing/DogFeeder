@@ -1,0 +1,6 @@
+/*!CK:2504899584!*//*1401158697,178167327*/
+
+if (self.CavalryLogger) { CavalryLogger.start_js(["XrZ\/W"]); }
+
+__d("EventsMinorsEveryoneNUX",["CSS","DOM","DOMQuery","Event","PrivacyConst","SelectorDeprecated","requestAnimationFrame"],function(a,b,c,d,e,f,g,h,i,j,k,l,m){var n,o,p,q=false;function r(u,v){if(q)throw new Error('Should not be able to initialize privacy nux twice!');q=true;n=u;o=h.find(n,'^.eventsCreate .audienceSelector');l.listen(o,'change',t);p=v;j.listen(p.getContent(),'click',s);}function s(event){var u=g.hasClass(event.target,'layerConfirm')||i.scry(event.target,'^.layerConfirm').length===1,v=g.hasClass(event.target,'layerCancel')||i.scry(event.target,'^.layerCancel').length===1;if(u){p.hide();return;}if(v)m(function(){l.toggle(o);});}function t(){if(o&&p){var u=l.getValue(o);if(u==k.BaseValue.EVERYONE)p.setContext(n).show();}}e.exports.setupPrivacyNUX=r;},null);
+__d("EventEditDialogShow",["Arbiter"],function(a,b,c,d,e,f,g){var h={setupNux:function(i){this._nux=i;},listenDialog:function(i){i.subscribe('aftershow',function(){setTimeout(function(){g.inform('EventEditDialogShow/aftershow');this._showNux();}.bind(this),700);}.bind(this));},_showNux:function(){if(this._nux)this._nux.show();}};e.exports=h;},null);
